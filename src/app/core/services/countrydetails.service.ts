@@ -19,7 +19,7 @@ export class CountrydetailsService {
         this.country =res as Countrydetails
       },
       error: err =>{
-        console.log(err)
+         alert("Error while fetching Country details")
       }
     })
   }

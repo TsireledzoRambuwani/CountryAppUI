@@ -3,7 +3,7 @@
     
   </div>
   <div class="row">
-    <div class="col-sm-3"  *ngFor="let countries of service.list; let i =index">
+    <div class="col-sm-3"  *ngFor="let countries of service.countryList; let i =index">
      <a routerLink="/countries/details/{{countries.name}}">
         <div class="card mb-4">
             <img class="card-img-top" src={{countries.flag}} style="height: 160px;"  alt="Card image cap">

@@ -10,20 +10,17 @@ export class CountriesService {
 
   url:string = environment.apiBaseUrl + '/countries'
   constructor(private http: HttpClient) { }
-  list: Countries[] = [];
+  countryList: Countries[] = [];
 
   getAllCountries(){
     this.http.get(this.url)
     .subscribe({
-      next: res =>{
-        
-        this.list =res as Countries[]
-         console.log(res)
-          console.log('hi')
-        return this.list
+      next: res =>{      
+        this.countryList =res as Countries[]
+        return this.countryList
       },
       error: err =>{
-        console.log(err)
+        alert("Error while fetching Countries")
       }
     })
   }
