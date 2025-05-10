@@ -1,7 +1,8 @@
-import { TestBed } from "@angular/core/testing";
+import { fakeAsync, TestBed } from "@angular/core/testing";
 import { CountrydetailsService } from "./countrydetails.service";
 import { provideHttpClient } from "@angular/common/http";
 import { provideHttpClientTesting } from "@angular/common/http/testing";
+import { Observable } from "rxjs";
 
 describe('CountrydetailsService', () => {
   let countryDetailsService: CountrydetailsService;
@@ -17,5 +18,13 @@ describe('CountrydetailsService', () => {
   it('should create the service', () => {
     expect(countryDetailsService).toBeTruthy();
   });
+
+      it('return countriesDetails', fakeAsync(() => {
+    const reqObsr$: Observable<any> = countryDetailsService.getCountryDetails("Botswana");
+    reqObsr$.subscribe(res => {
+      expect(res).toEqual({});
+    });
+    
+}))
 
 });
