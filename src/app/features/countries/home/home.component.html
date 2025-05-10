@@ -3,12 +3,12 @@
     
   </div>
   <div class="row">
-    <div class="col-sm-3"  *ngFor="let countries of service.countryList; let i =index">
-     <a routerLink="/countries/details/{{countries.name}}">
+    <div class="col-sm-3"  *ngFor="let country of  countries$ | async; let i =index">
+     <a routerLink="/countries/details/{{country.name}}">
         <div class="card mb-4">
-            <img class="card-img-top" src={{countries.flag}} style="height: 160px;"  alt="Card image cap">
+            <img class="card-img-top" src={{country.flag}} style="height: 160px;"  alt="Card image cap">
             <div class="card-body">
-            <strong class="card-text">{{countries.name}}</strong>
+            <strong class="card-text">{{country.name}}</strong>
          </div>
     </div>
     </a>
